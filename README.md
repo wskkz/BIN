@@ -1,7 +1,30 @@
 # BIN
-简介：在2XXX年，隶属于彼岸的企业“生宾咯”的队伍“宾拉”，向滨州发动了攻击。作为一名宾州大地土生土长的战士，将操作“宾州炮”，抵御外敌！
+简介：在2XXX年，隶属于彼岸的企业“生宾咯”的队伍“宾拉”，向滨州发动了攻击。一名宾州大地土生土长的战士，将操作“宾州炮”，抵御外敌！
 
 本作基于Godot引擎制作。
+
+# 许可证
+MIT License
+
+Copyright (c) 2023 wskkz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 # 第三方许可证
 ## Godot
