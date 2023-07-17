@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://BinZhou.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://Biu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BinLa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://resource/6294970957561856.wav" type="AudioStream" id=6]
+[ext_resource path="res://resource/zap.wav" type="AudioStream" id=7]
+[ext_resource path="res://resource/laugh.wav" type="AudioStream" id=8]
+[ext_resource path="res://resource/boom.wav" type="AudioStream" id=9]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640, 0, 0, 0, 0, 0, 640, 480, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+shooter_scene = ExtResource( 1 )
+arrow_scene = ExtResource( 3 )
+BinLa_scene = ExtResource( 4 )
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 320, 240 )
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BinLaTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="BinLaPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BinLaSpawnLocation" type="PathFollow2D" parent="BinLaPath"]
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="LaughSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="ZapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="BoomSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_Main_child_exiting_tree"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
+[connection signal="timeout" from="BinLaTimer" to="." method="_on_BinLaTimer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="finished" from="BGMPlayer" to="." method="_on_BGMPlayer_finished"]
